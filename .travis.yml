@@ -12,3 +12,5 @@ install: /bin/true
 before_script: /bin/true
 script:
 - ant clean jenkins
+- (cd sonar && mvn validate package)
+- ./gradlew check
