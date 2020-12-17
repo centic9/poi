@@ -9,9 +9,7 @@ on:
     branches: [ trunk ]
   pull_request:
     branches: [ trunk ]
-
-# - openjdk11
-
+        
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -20,14 +18,17 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
+        # for now verify JDK 8 and 11
+        java: [ 8, 11.0.x ]
 
+    name: Java ${{ matrix.java }} build
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up JDK 1.8
+    - name: Setup java ${{ matrix.java }}
       uses: actions/setup-java@v1
       with:
-        java-version: 1.8
+        java-version: ${{ matrix.java }}
 
     - name: Set up Ant
       id: setup-ant
