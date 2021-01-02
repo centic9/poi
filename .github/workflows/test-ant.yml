@@ -35,7 +35,6 @@ jobs:
       run: |
         wget https://www.apache.org/dist/ant/binaries/apache-ant-1.10.9-bin.tar.gz
         tar --exclude=apache-ant-1.10.9/manual -xzvf apache-ant-1.10.9-bin.tar.gz
-        find apache-ant-1.10.9
         ANT_HOME=`pwd`/apache-ant-1.10.9 apache-ant-1.10.9/bin/ant -version
 
     - name: Cache downloaded third-party libraries
@@ -53,6 +52,4 @@ jobs:
 
     - name: Build with Ant
       run: |
-        find apache-ant-1.10.9
-        ANT_HOME=`pwd`/apache-ant-1.10.9 apache-ant-1.10.9/bin/ant -version
-        #ANT_HOME=`pwd`/apache-ant-1.10.9 apache-ant-1.10.9/bin/ant clean jenkins
+        ANT_HOME=`pwd`/apache-ant-1.10.9 apache-ant-1.10.9/bin/ant clean jenkins
