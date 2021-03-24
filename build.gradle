@@ -163,7 +163,7 @@ subprojects {
         // http://forums.gradle.org/gradle/topics/jacoco_related_failure_in_multiproject_build
         systemProperties['user.dir'] = workingDir
 
-        systemProperties['POI.testdata.path'] = '../../test-data'
+        systemProperties['POI.testdata.path'] = '../test-data'
 
         // this is necessary for JDK 9+ to keep formatting dates the same way as in previous JDK-versions
         systemProperties['java.locale.providers'] = 'JRE,CLDR'
@@ -195,7 +195,7 @@ subprojects {
             properties {
                 // as we currently use build/<module>/ as project-basedir, we need to tell Sonar to use
                 // the root-folder as "basedir" for the projects
-                property "sonar.projectBaseDir", "$projectDir/../.."
+                property "sonar.projectBaseDir", "$projectDir"
                 // currently supported providers on Jenkins: "hg,git": property "sonar.scm.provider", "svn"
 
                 // the plugin seems to not detect our non-standard build-layout

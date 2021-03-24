@@ -90,7 +90,7 @@ under the License.
         <attribute name="value"/>
         <sequential>
             <mkdir dir="build/poi-ant-contrib"/>
-            <javac srcdir="src/excelant/poi-ant-contrib" destdir="build/poi-ant-contrib" includeantruntime="true" excludes="Junit5Progress.java"/>
+            <javac srcdir="excelant/poi-ant-contrib" destdir="build/poi-ant-contrib" includeantruntime="true" excludes="Junit5Progress.java"/>
             <taskdef name="PropertyResetHelper" classname="PropertyReset" classpath="build/poi-ant-contrib"/>
             <PropertyResetHelper name="@{name}" value="@{value}" />
         </sequential>
@@ -348,18 +348,18 @@ under the License.
 
     <!-- See https://www.ecma-international.org/publications/standards/Ecma-376.htm -->
     <!-- "Copy these file(s), free of charge" -->
-    <property name="ooxml.xsds.izip.1" value="${basedir}/src/ooxml/resources/org/apache/poi/schemas/OfficeOpenXML-XMLSchema-Transitional.zip"/>
+    <property name="ooxml.xsds.izip.1" value="${basedir}/ooxml/src/main/resources/org/apache/poi/schemas/OfficeOpenXML-XMLSchema-Transitional.zip"/>
     <property name="ooxml.xsds.src.dir" location="build/ooxml-xsds-src"/>
     <property name="ooxml.xsds.src.jar" location="build/dist/maven/poi-ooxml-full/poi-ooxml-full-${version.id}-sources.jar"/>
     <property name="ooxml.xsds.jar" location="build/dist/maven/poi-ooxml-full/poi-ooxml-full-${version.id}.jar"/>
 
     <!-- additional schemas are packed into the poi schemas jar, -->
     <!-- so we don't have to care about a separate versioning of the original ooxml schemas -->
-    <property name="ooxml.xsds.izip.2" value="${basedir}/src/ooxml/resources/org/apache/poi/schemas/OpenPackagingConventions-XMLSchema.zip"/>
+    <property name="ooxml.xsds.izip.2" value="${basedir}/ooxml/src/main/resources/org/apache/poi/schemas/OpenPackagingConventions-XMLSchema.zip"/>
     <property name="ooxml.security.src.dir" location="build/ooxml-security-src"/>
-    <property name="ooxml.security.xsd.dir" location="src/ooxml/resources/org/apache/poi/poifs/crypt"/>
-    <property name="ooxml.visio.xsd.dir" location="src/ooxml/resources/org/apache/poi/xdgf"/>
-    <property name="ooxml.schema.xsdconfig.dir" location="src/ooxml/resources/org/apache/poi/schemas"/>
+    <property name="ooxml.security.xsd.dir" location="ooxml/src/main/resources/org/apache/poi/poifs/crypt"/>
+    <property name="ooxml.visio.xsd.dir" location="ooxml/src/main/resources/org/apache/poi/xdgf"/>
+    <property name="ooxml.schema.xsdconfig.dir" location="ooxml/src/main/resources/org/apache/poi/schemas"/>
 
     <!-- Coverage -->
     <property name="coverage.dir" value="build/coverage"/>

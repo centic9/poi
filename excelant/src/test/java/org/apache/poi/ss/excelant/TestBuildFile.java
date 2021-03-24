@@ -51,7 +51,7 @@ public class TestBuildFile {
 
     @BeforeEach
     void setUp() {
-        String filename = TestBuildFile.getDataDir() + "/../src/excelant/testcases/org/apache/poi/ss/excelant/tests.xml";
+        String filename = TestBuildFile.getDataDir() + "/../excelant/src/test/java/org/apache/poi/ss/excelant/tests.xml";
         int logLevel = Project.MSG_DEBUG;
 
         logBuffer = new StringBuilder();
